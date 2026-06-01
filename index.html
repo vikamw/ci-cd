@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя Лабораторная Форма</title>
+    <style>
+        body { font-family: Arial; text-align: center; padding: 50px; }
+        form { max-width: 400px; margin: 0 auto; }
+        input, button { padding: 10px; margin: 10px; width: 80%; }
+        button { background: #4CAF50; color: white; border: none; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Тестовая Форма</h1>
+    <form id="myForm">
+        <input type="text" id="name" placeholder="Ваше имя" required><br>
+        <input type="email" id="email" placeholder="Ваш email" required><br>
+        <button type="submit">Отправить</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('myForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            document.getElementById('result').innerHTML = `Спасибо, ${name}! Форма отправлена успешно! 🎉`;
+        });
+    </script>
+</body>
+</html>
